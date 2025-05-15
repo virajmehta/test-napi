@@ -1,3 +1,4 @@
-import { sum } from "../index.js";
+import { getUserFromEnv, grabVirajmSite } from "../index.js";
 
-console.log("From native", sum(40, 2));
+console.log("From native", getUserFromEnv());
+console.log("virajm.com: ", grabVirajmSite());

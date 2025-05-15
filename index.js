@@ -310,6 +310,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { sum } = nativeBinding
+const { getUserFromEnv, grabVirajmSite } = nativeBinding
 
-module.exports.sum = sum
+module.exports.getUserFromEnv = getUserFromEnv
+module.exports.grabVirajmSite = grabVirajmSite
