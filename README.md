@@ -2,6 +2,6 @@
 
 To test:
 
-`pnpm build` (assuming a modern Rust toolchain in the shell and maybe a local Python installation that is accessible)
-`pnpm tsc`
-`node dist/main.mjs`
+- `pnpm build` (assuming a modern Rust toolchain in the shell and maybe a local Python installation that is accessible)
+- `pnpm tsc`
+- `node dist/main.mjs`
