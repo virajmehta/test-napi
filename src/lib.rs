@@ -2,6 +2,7 @@
 use pyo3::ffi::c_str;
 use pyo3::prelude::*;
 use pyo3::types::IntoPyDict;
+use reqwest::Client;
 
 #[macro_use]
 extern crate napi_derive;
@@ -24,6 +25,20 @@ pub fn grab_virajm_site() -> String {
   let body = reqwest::blocking::get("https://virajm.com")
     .unwrap()
     .text()
+    .unwrap();
+  body
+}
+
+#[napi]
+pub async fn grab_virajm_site_async() -> String {
+  let client = Client::new();
+  let body = client
+    .get("https://virajm.com")
+    .send()
+    .await
+    .unwrap()
+    .text()
+    .await
     .unwrap();
   body
 }

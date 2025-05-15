@@ -5,3 +5,4 @@
 
 export declare function getUserFromEnv(): string
 export declare function grabVirajmSite(): string
+export declare function grabVirajmSiteAsync(): Promise<string>
