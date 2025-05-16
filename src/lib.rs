@@ -42,3 +42,16 @@ pub async fn grab_virajm_site_async() -> String {
     .unwrap();
   body
 }
+
+#[napi(object)]
+pub struct TimeAndNfl {
+  pub time: String,
+  pub team: String,
+}
+
+#[napi]
+pub fn get_time_and_nfl() -> TimeAndNfl {
+  let time = chrono::Utc::now().format("%H:%M:%S").to_string();
+  let team = "Steelers".to_string();
+  TimeAndNfl { time, team }
+}

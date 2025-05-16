@@ -6,3 +6,8 @@
 export declare function getUserFromEnv(): string
 export declare function grabVirajmSite(): string
 export declare function grabVirajmSiteAsync(): Promise<string>
+export interface TimeAndNfl {
+  time: string
+  team: string
+}
+export declare function getTimeAndNfl(): TimeAndNfl
