@@ -11,3 +11,18 @@ export interface TimeAndNfl {
   team: string
 }
 export declare function getTimeAndNfl(): TimeAndNfl
+export interface Coefficients {
+  a: number
+  b: number
+  c: number
+}
+export const enum SolutionType {
+  OneRealRoot = 0,
+  TwoRealRoots = 1
+}
+export interface Solution {
+  solutionType: SolutionType
+  root1: number
+  root2?: number
+}
+export declare function solveQuadratic(coefficients: Coefficients): Solution
