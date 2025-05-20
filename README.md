@@ -1,4 +1,4 @@
-# NAPI test code for NAPI + PyO3
+# Test code for NAPI + PyO3
 
 To test:
 
