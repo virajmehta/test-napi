@@ -5,6 +5,7 @@ import {
   getTimeAndNfl,
   solveQuadratic,
   sleepy,
+  Client,
 } from "../index.js";
 
 console.log("From native", getUserFromEnv());
@@ -31,6 +32,10 @@ try {
 
 // This next section tests that async rust is nonblocking in Node
 const sleepyPromise = sleepy();
+const client = new Client("USER");
+const value = client.getValue();
+console.log(value);
+const t0SiteText = await client.getTensorzeroWebsite();
 
 let count = 0;
 // Every 100ms increment the count
@@ -53,5 +58,10 @@ sleepyPromise
     clearInterval(intervalId); // Stop the counter
     console.log("Counter stopped due to an error in sleepy.");
   });
+// Block until sleepyPromise resolves
+await sleepyPromise;
 
 console.log(count);
+
+console.log("tensorzero site");
+console.log(t0SiteText);

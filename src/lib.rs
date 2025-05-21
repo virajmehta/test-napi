@@ -107,3 +107,39 @@ pub async fn sleepy() -> String {
   tokio::time::sleep(Duration::from_secs(5)).await;
   "oh sorry just woke up!".to_string()
 }
+
+#[napi(js_name = "Client")]
+pub struct ClientExample {
+  pub env_value: String,
+  client: Client,
+}
+
+#[napi]
+impl ClientExample {
+  #[napi(constructor)]
+  pub fn new(env_name: String) -> Self {
+    // Read from environment variable `env_name`
+    let env_value = std::env::var(env_name).unwrap();
+    let client = Client::new();
+    ClientExample { env_value, client }
+  }
+
+  #[napi]
+  pub fn get_value(&self) -> String {
+    self.env_value.clone()
+  }
+
+  #[napi]
+  pub async fn get_tensorzero_website(&self) -> String {
+    let body = self
+      .client
+      .get("https://tensorzero.com")
+      .send()
+      .await
+      .unwrap()
+      .text()
+      .await
+      .unwrap();
+    body
+  }
+}

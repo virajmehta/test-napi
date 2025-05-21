@@ -310,7 +310,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { getUserFromEnv, grabVirajmSite, grabVirajmSiteAsync, getTimeAndNfl, SolutionType, solveQuadratic, sleepy } = nativeBinding
+const { getUserFromEnv, grabVirajmSite, grabVirajmSiteAsync, getTimeAndNfl, SolutionType, solveQuadratic, sleepy, Client } = nativeBinding
 
 module.exports.getUserFromEnv = getUserFromEnv
 module.exports.grabVirajmSite = grabVirajmSite
@@ -319,3 +319,4 @@ module.exports.getTimeAndNfl = getTimeAndNfl
 module.exports.SolutionType = SolutionType
 module.exports.solveQuadratic = solveQuadratic
 module.exports.sleepy = sleepy
+module.exports.Client = Client

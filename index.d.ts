@@ -27,3 +27,10 @@ export interface Solution {
 }
 export declare function solveQuadratic(coefficients: Coefficients): Solution
 export declare function sleepy(): Promise<string>
+export type ClientExample = Client
+export declare class Client {
+  envValue: string
+  constructor(envName: string)
+  getValue(): string
+  getTensorzeroWebsite(): Promise<string>
+}
