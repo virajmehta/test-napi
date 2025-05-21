@@ -20,6 +20,8 @@ pyo3 = { version = "0.25.0", features = ["auto-initialize"] }
 chrono = "0.4.41"
 anyhow = "1.0.98"
 tokio = "1.45.0"
+lazy_static = "1.5.0"
+uuid = { version = "1.16.0", features = ["v7"] }
 
 [build-dependencies]
 napi-build = "2.0.1"
