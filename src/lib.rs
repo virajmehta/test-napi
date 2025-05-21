@@ -1,4 +1,6 @@
 #![deny(clippy::all)]
+use std::time::Duration;
+
 use anyhow::{bail, Result};
 use pyo3::ffi::c_str;
 use pyo3::prelude::*;
@@ -98,4 +100,10 @@ pub fn solve_quadratic(coefficients: Coefficients) -> Result<Solution> {
     root1: root1,
     root2: Some(root2),
   })
+}
+
+#[napi]
+pub async fn sleepy() -> String {
+  tokio::time::sleep(Duration::from_secs(5)).await;
+  "oh sorry just woke up!".to_string()
 }

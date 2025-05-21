@@ -26,3 +26,4 @@ export interface Solution {
   root2?: number
 }
 export declare function solveQuadratic(coefficients: Coefficients): Solution
+export declare function sleepy(): Promise<string>
